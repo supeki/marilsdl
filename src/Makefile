@@ -1,4 +1,3 @@
-
 CC=gcc
 CFLAGS=
 LIBS=-lSDL2
@@ -27,5 +26,3 @@ $(OBJDIR):
 
 $(BINDIR):
 	mkdir $(BINDIR)
-
-
