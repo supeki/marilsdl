@@ -4,12 +4,12 @@ CFLAGS=
 LIBS=-lSDL2
 
 OBJDIR = ../obj
-OBJS = $(wildcard *.o)
+OBJS = main.o display.o
 
 BINDIR = ../bin
 BIN = maril
 
-$(BINDIR)/$(BIN): $(OBJS)
+$(BINDIR)/$(BIN): $(OBJDIR)/$(OBJS)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 $(OBJDIR)/main.o: main.c main.h display.h
