@@ -6,6 +6,16 @@
 
 bool running = false;
 
+void handleEvents(SDL_Event env) {
+	switch (env.type) {
+		case SDL_QUIT:
+			running = false;
+			break;
+		default:
+			break;
+	}
+}
+
 int main() {
 	initDisplay();
 	
@@ -14,7 +24,10 @@ int main() {
 }
 
 void loop() {
-	while (running) {
+	SDL_Event env;
 
+	while (running) {
+		while (SDL_PollEvent(&env))
+			handleEvents(env);
 	}
 }
